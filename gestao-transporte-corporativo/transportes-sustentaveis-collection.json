@@ -1,0 +1,222 @@
+{
+  "info": {
+    "name": "Gestão Sustentável de Transporte",
+    "description": "Collection de endpoints para a API de Gestão Sustentável de Transporte Corporativo",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Listar Transportes Sustentáveis",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/transportes-sustentaveis",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["transportes-sustentaveis"]
+        }
+      }
+    },
+    {
+      "name": "Cadastrar Transporte Sustentável",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"Bicicleta\",\n  \"descricao\": \"Transporte limpo e sustentável.\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/transportes-sustentaveis",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["transportes-sustentaveis"]
+        }
+      }
+    },
+    {
+      "name": "Buscar Transporte Sustentável por ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/transportes-sustentaveis/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["transportes-sustentaveis", "1"]
+        }
+      }
+    },
+    {
+      "name": "Atualizar Transporte Sustentável",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"Carro Elétrico\",\n  \"descricao\": \"Atualização de detalhes do transporte.\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/transportes-sustentaveis/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["transportes-sustentaveis", "1"]
+        }
+      }
+    },
+    {
+      "name": "Deletar Transporte Sustentável",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/transportes-sustentaveis/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["transportes-sustentaveis", "1"]
+        }
+      }
+    },
+    {
+      "name": "Cadastrar Impacto Ambiental",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"empresaId\": 1,\n  \"impactoDescricao\": \"Emissão reduzida em 20%\",\n  \"impactoValor\": 15.5\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/impacto-transporte",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["impacto-transporte"]
+        }
+      }
+    },
+    {
+      "name": "Listar Impactos Ambientais",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/impacto-transporte",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["impacto-transporte"]
+        }
+      }
+    },
+    {
+      "name": "Buscar Impacto Ambiental por Empresa",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/impacto-transporte/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["impacto-transporte", "1"]
+        }
+      }
+    },
+    {
+      "name": "Cadastrar Recompensa",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"descricao\": \"Recompensa por uso de transporte sustentável\",\n  \"valor\": 50.0\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/recompensas",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["recompensas"]
+        }
+      }
+    },
+    {
+      "name": "Listar Recompensas",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/recompensas",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["recompensas"]
+        }
+      }
+    },
+    {
+      "name": "Atualizar Recompensa",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"descricao\": \"Nova descrição da recompensa\",\n  \"valor\": 100.0\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/recompensas/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["recompensas", "1"]
+        }
+      }
+    },
+    {
+      "name": "Deletar Recompensa",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/recompensas/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["recompensas", "1"]
+        }
+      }
+    }
+  ]
+}

@@ -1,68 +1,33 @@
 package br.com.fiap.gestao_transporte_corporativo.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Column;
+import jakarta.persistence.*;
+import lombok.*;
+
+import java.time.LocalDate;
 
 @Entity
+@Table(name = "TBL_TRANSPORTE")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode
 public class Transporte {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_TRANSPORTE")
+    @SequenceGenerator(name = "SEQ_TRANSPORTE", sequenceName = "SEQ_TRANSPORTE", allocationSize = 1)
+    @Column(name = "ID_TRANSPORTE")
     private Long id;
 
-    @Column(nullable = false)
-    private String tipo;
+    private String modelo;
 
-    @Column(nullable = false)
-    private Integer capacidade;
+    @Column(name = "TIPO_COMBUSTIVEL")
+    private String tipoCombustivel;
 
-    @Column(nullable = false)
-    private boolean disponivel;
+    @Column(name = "KM_POR_LITRO")
+    private float kmPorLitro;
 
-    // Construtor padrão
-    public Transporte() {
-    }
-
-    // Construtor com parâmetros
-    public Transporte(String tipo, Integer capacidade, boolean disponivel) {
-        this.tipo = tipo;
-        this.capacidade = capacidade;
-        this.disponivel = disponivel;
-    }
-
-    // Getters e Setters
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
-
-    public Integer getCapacidade() {
-        return capacidade;
-    }
-
-    public void setCapacidade(Integer capacidade) {
-        this.capacidade = capacidade;
-    }
-
-    public boolean isDisponivel() {
-        return disponivel;
-    }
-
-    public void setDisponivel(boolean disponivel) {
-        this.disponivel = disponivel;
-    }
+    @Column(name = "ULTIMA_MANUTENCAO")
+    private LocalDate ultimaManutencao;
 }
