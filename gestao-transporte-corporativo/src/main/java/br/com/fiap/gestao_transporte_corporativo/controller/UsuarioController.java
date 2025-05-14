@@ -34,7 +34,7 @@ public class UsuarioController {
 
     @GetMapping("/usuarios")
     @ResponseStatus(HttpStatus.OK)
-    public Page<UsuarioExibicaoDto> buscarTodosUsuarios(@PageableDefault(size=10, page=0, sort="usuarioId", direction=Sort.Direction.DESC) Pageable paginacao) {
+    public Page<UsuarioExibicaoDto> buscarTodosUsuarios(@PageableDefault(size=10, page=0, sort="id", direction=Sort.Direction.DESC) Pageable paginacao) {
         return service.listarTodosUsuarios(paginacao);
     }
 

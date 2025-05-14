@@ -56,12 +56,14 @@ public class TransporteController {
         return service.criar(transporte);
     }
 
-    @PutMapping("/transportes/{id}")
+    @PutMapping("/transportes")
+    @ResponseStatus(HttpStatus.OK)
     public TransporteExibicaoDto atualizarTransporte(@RequestBody Transporte transporte) {
         return service.atualizar(transporte);
     }
 
     @DeleteMapping("/transportes/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deletarTransporte(@PathVariable Long id) {
         service.excluir(id);
     }

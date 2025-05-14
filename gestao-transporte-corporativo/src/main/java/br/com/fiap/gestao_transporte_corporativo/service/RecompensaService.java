@@ -1,8 +1,15 @@
 package br.com.fiap.gestao_transporte_corporativo.service;
 
+import br.com.fiap.gestao_transporte_corporativo.dto.RecompensaCadastroDto;
+import br.com.fiap.gestao_transporte_corporativo.dto.RecompensaExibicaoDto;
+import br.com.fiap.gestao_transporte_corporativo.exception.RecompensaNaoEncontradaException;
+import br.com.fiap.gestao_transporte_corporativo.model.Funcionario;
 import br.com.fiap.gestao_transporte_corporativo.model.Recompensa;
+import br.com.fiap.gestao_transporte_corporativo.repository.FuncionarioRepository;
 import br.com.fiap.gestao_transporte_corporativo.repository.RecompensaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,37 +19,68 @@ import java.util.Optional;
 public class RecompensaService {
 
     @Autowired
-    private RecompensaRepository recompensaRepository;
+    private RecompensaRepository repository;
 
-//    // Listar todas as recompensas
-//    public List<Recompensa> listarTodas() {
-//        return recompensaRepository.findAll();
-//    }
-//
-//    // Obter uma recompensa por ID
-//    public Optional<Recompensa> obterPorId(Long id) {
-//        return recompensaRepository.findById(id);
-//    }
-//
-//    // Criar uma nova recompensa
-//    public Recompensa criar(Recompensa recompensa) {
-//        return recompensaRepository.save(recompensa);
-//    }
-//
-//    // Atualizar uma recompensa existente
-//    public Optional<Recompensa> atualizar(Long id, Recompensa recompensaAtualizada) {
-//        return recompensaRepository.findById(id).map(recompensa -> {
-//            recompensa.setDescricao(recompensaAtualizada.getDescricao());
-//            recompensa.setValor(recompensaAtualizada.getValor());
-//            return recompensaRepository.save(recompensa);
-//        });
-//    }
-//
-//    // Excluir uma recompensa por ID
-//    public boolean excluir(Long id) {
-//        return recompensaRepository.findById(id).map(recompensa -> {
-//            recompensaRepository.delete(recompensa);
-//            return true;
-//        }).orElse(false);
-//    }
+    @Autowired
+    private FuncionarioRepository funcionarioRepository;
+
+    // Listar todos as recompensas
+    public Page<RecompensaExibicaoDto> listarTodos(Pageable paginacao) {
+        return repository.findAll(paginacao).map(RecompensaExibicaoDto::new);
+    }
+
+    // Obter uma recompensa por ID
+    public RecompensaExibicaoDto obterPorId(Long id) {
+        Optional<Recompensa> recompensa = repository.findById(id);
+
+        if(recompensa.isPresent()) {
+            return new RecompensaExibicaoDto(recompensa.get());
+        }
+        else {
+            throw new RecompensaNaoEncontradaException("Recompensa não encontrada!");
+        }
+    }
+
+    // Obter uma recompensa por ID do funcionario
+    public Page<RecompensaExibicaoDto> listarPorIdFuncionario(Long idFuncionario, Pageable paginacao) {
+        return repository.findByFuncionario_Id(idFuncionario, paginacao).map(RecompensaExibicaoDto::new);
+    }
+
+    // Criar uma nova recompensa
+    public RecompensaExibicaoDto criar(RecompensaCadastroDto recompensaCadastroDto) {
+        Recompensa recompensa = new Recompensa();
+        Optional<Funcionario> funcionario = funcionarioRepository.findById(recompensaCadastroDto.funcionario());
+
+        recompensa.setFuncionario(funcionario.get());
+        recompensa.setDescricao(recompensaCadastroDto.descricao());
+        recompensa.setValor(recompensaCadastroDto.valor());
+
+        return new RecompensaExibicaoDto(repository.save(recompensa));
+    }
+
+    // Atualizar uma recompensa existente
+    public RecompensaExibicaoDto atualizar(RecompensaCadastroDto recompensaCadastroDto) {
+        Recompensa recompensa = new Recompensa();
+        Optional<Funcionario> funcionario = funcionarioRepository.findById(recompensaCadastroDto.funcionario());
+
+        recompensa.setId(recompensaCadastroDto.id());
+        recompensa.setFuncionario(funcionario.get());
+        recompensa.setDescricao(recompensaCadastroDto.descricao());
+        recompensa.setValor(recompensaCadastroDto.valor());
+
+        return new RecompensaExibicaoDto(repository.save(recompensa));
+    }
+
+    // Excluir uma recompensa por ID
+    public void excluir(Long id) {
+        Optional<Recompensa> recompensa = repository.findById(id);
+
+        if (recompensa.isPresent()) {
+            repository.delete(recompensa.get());
+        }
+        else {
+            throw new RecompensaNaoEncontradaException("Recompensa não encontrada!");
+        }
+    }
+
 }

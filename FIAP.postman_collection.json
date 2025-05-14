@@ -1,0 +1,1428 @@
+{
+	"info": {
+		"_postman_id": "fb2e757f-1c4a-4fe2-823d-49e580dbd804",
+		"name": "FIAP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31070895"
+	},
+	"item": [
+		{
+			"name": "Transportes",
+			"item": [
+				{
+					"name": "Listar Todos Transportes",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnZXN0YW8tdHJhbnNwb3J0ZXMiLCJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJleHAiOjE3NDcxODYwNDR9.mmuq18AfquOCbqpn18y_4buXR3bJFeo5gXIw_QMw0LI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{path}}/transportes",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"transportes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar Transporte",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnZXN0YW8tdHJhbnNwb3J0ZXMiLCJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJleHAiOjE3NDcxODYwNDR9.mmuq18AfquOCbqpn18y_4buXR3bJFeo5gXIw_QMw0LI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"modelo\": \"BMW X1\",\r\n    \"tipoCombustivel\": \"gasolina\",\r\n    \"kmPorLitro\": 10.7,\r\n    \"ultimaManutencao\": \"2025-04-01\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{path}}/transportes",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"transportes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Transporte",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnZXN0YW8tdHJhbnNwb3J0ZXMiLCJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJleHAiOjE3NDcxODYwNDR9.mmuq18AfquOCbqpn18y_4buXR3bJFeo5gXIw_QMw0LI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"modelo\": \"BMW X1\",\r\n    \"tipoCombustivel\": \"gasolina\",\r\n    \"kmPorLitro\": 10.8,\r\n    \"ultimaManutencao\": \"2025-04-01\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{path}}/transportes",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"transportes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Transporte",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnZXN0YW8tdHJhbnNwb3J0ZXMiLCJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJleHAiOjE3NDcxNzY2NTF9.Rs6zPUXictwJRtVmeoaPKSlF5G14OvUxwkuUiKyZXxg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{path}}/transportes/3",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"transportes",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Transporte por ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnZXN0YW8tdHJhbnNwb3J0ZXMiLCJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJleHAiOjE3NDcxNzY2NTF9.Rs6zPUXictwJRtVmeoaPKSlF5G14OvUxwkuUiKyZXxg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 3,\r\n    \"nome\": \"Teste da Silva\",\r\n    \"email\": \"teste@email.com\",\r\n    \"senha\": 123456,\r\n    \"role\": \"ADMIN\"\r\n}"
+						},
+						"url": {
+							"raw": "{{path}}/transportes/1",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"transportes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Transportes por Modelo",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnZXN0YW8tdHJhbnNwb3J0ZXMiLCJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJleHAiOjE3NDcxNzY2NTF9.Rs6zPUXictwJRtVmeoaPKSlF5G14OvUxwkuUiKyZXxg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 3,\r\n    \"nome\": \"Teste da Silva\",\r\n    \"email\": \"teste@email.com\",\r\n    \"senha\": 123456,\r\n    \"role\": \"ADMIN\"\r\n}"
+						},
+						"url": {
+							"raw": "{{path}}/transportes/modelo/BMW X1",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"transportes",
+								"modelo",
+								"BMW X1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Transportes por Tipo Combustível",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnZXN0YW8tdHJhbnNwb3J0ZXMiLCJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJleHAiOjE3NDcxNzY2NTF9.Rs6zPUXictwJRtVmeoaPKSlF5G14OvUxwkuUiKyZXxg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 3,\r\n    \"nome\": \"Teste da Silva\",\r\n    \"email\": \"teste@email.com\",\r\n    \"senha\": 123456,\r\n    \"role\": \"ADMIN\"\r\n}"
+						},
+						"url": {
+							"raw": "{{path}}/transportes/tipo-combustivel/gasolina",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"transportes",
+								"tipo-combustivel",
+								"gasolina"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Transportes por KM/L",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnZXN0YW8tdHJhbnNwb3J0ZXMiLCJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJleHAiOjE3NDcxNzY2NTF9.Rs6zPUXictwJRtVmeoaPKSlF5G14OvUxwkuUiKyZXxg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 3,\r\n    \"nome\": \"Teste da Silva\",\r\n    \"email\": \"teste@email.com\",\r\n    \"senha\": 123456,\r\n    \"role\": \"ADMIN\"\r\n}"
+						},
+						"url": {
+							"raw": "{{path}}/transportes/km-por-litro/10.8/11",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"transportes",
+								"km-por-litro",
+								"10.8",
+								"11"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "Listar Todos Usuarios",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnZXN0YW8tdHJhbnNwb3J0ZXMiLCJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJleHAiOjE3NDcxODYwNDR9.mmuq18AfquOCbqpn18y_4buXR3bJFeo5gXIw_QMw0LI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{path}}/usuarios",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registrar Usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Teste da Silva\",\r\n    \"email\": \"teste@email.com\",\r\n    \"senha\": \"123456\",\r\n    \"role\": \"USER\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{authpath}}/register",
+							"host": [
+								"{{authpath}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logar Usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"admin@email.com\",\r\n    \"senha\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{authpath}}/login",
+							"host": [
+								"{{authpath}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnZXN0YW8tdHJhbnNwb3J0ZXMiLCJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJleHAiOjE3NDcxNzY2NTF9.Rs6zPUXictwJRtVmeoaPKSlF5G14OvUxwkuUiKyZXxg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 3,\r\n    \"nome\": \"Teste da Silva\",\r\n    \"email\": \"teste@email.com\",\r\n    \"senha\": 123456,\r\n    \"role\": \"ADMIN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{path}}/usuarios",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnZXN0YW8tdHJhbnNwb3J0ZXMiLCJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJleHAiOjE3NDcxNzY2NTF9.Rs6zPUXictwJRtVmeoaPKSlF5G14OvUxwkuUiKyZXxg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 3,\r\n    \"nome\": \"Teste da Silva\",\r\n    \"email\": \"teste@email.com\",\r\n    \"senha\": 123456,\r\n    \"role\": \"ADMIN\"\r\n}"
+						},
+						"url": {
+							"raw": "{{path}}/usuarios/3",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"usuarios",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Usuario por ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnZXN0YW8tdHJhbnNwb3J0ZXMiLCJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJleHAiOjE3NDcxNzY2NTF9.Rs6zPUXictwJRtVmeoaPKSlF5G14OvUxwkuUiKyZXxg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 3,\r\n    \"nome\": \"Teste da Silva\",\r\n    \"email\": \"teste@email.com\",\r\n    \"senha\": 123456,\r\n    \"role\": \"ADMIN\"\r\n}"
+						},
+						"url": {
+							"raw": "{{path}}/usuarios/1",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"usuarios",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Funcionario",
+			"item": [
+				{
+					"name": "Listar Todos Funcionarios",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnZXN0YW8tdHJhbnNwb3J0ZXMiLCJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJleHAiOjE3NDcxODYwNDR9.mmuq18AfquOCbqpn18y_4buXR3bJFeo5gXIw_QMw0LI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 3,\r\n    \"nome\": \"Teste da Silva\",\r\n    \"email\": \"teste@email.com\",\r\n    \"senha\": 123456,\r\n    \"role\": \"ADMIN\"\r\n}"
+						},
+						"url": {
+							"raw": "{{path}}/funcionarios",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"funcionarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar Funcionario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnZXN0YW8tdHJhbnNwb3J0ZXMiLCJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJleHAiOjE3NDcxODYwNDR9.mmuq18AfquOCbqpn18y_4buXR3bJFeo5gXIw_QMw0LI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Victor Gabriel de Souza Santos\",\r\n    \"transporteAlternativo\": \"false\",\r\n    \"veiculoCorporativo\": \"false\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{path}}/funcionarios",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"funcionarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Funcionario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnZXN0YW8tdHJhbnNwb3J0ZXMiLCJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJleHAiOjE3NDcxODYwNDR9.mmuq18AfquOCbqpn18y_4buXR3bJFeo5gXIw_QMw0LI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 3,\r\n    \"nome\": \"Victor Gabriel de Souza Santos\",\r\n    \"transporteAlternativo\": false,\r\n    \"veiculoCorporativo\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{path}}/funcionarios",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"funcionarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Funcionario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnZXN0YW8tdHJhbnNwb3J0ZXMiLCJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJleHAiOjE3NDcxODYwNDR9.mmuq18AfquOCbqpn18y_4buXR3bJFeo5gXIw_QMw0LI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 3,\r\n    \"nome\": \"Victor Gabriel de Souza Santos\",\r\n    \"transporteAlternativo\": false,\r\n    \"veiculoCorporativo\": false\r\n}"
+						},
+						"url": {
+							"raw": "{{path}}/funcionarios/4",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"funcionarios",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Funcionario por ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnZXN0YW8tdHJhbnNwb3J0ZXMiLCJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJleHAiOjE3NDcxODYwNDR9.mmuq18AfquOCbqpn18y_4buXR3bJFeo5gXIw_QMw0LI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 3,\r\n    \"nome\": \"Teste da Silva\",\r\n    \"email\": \"teste@email.com\",\r\n    \"senha\": 123456,\r\n    \"role\": \"ADMIN\"\r\n}"
+						},
+						"url": {
+							"raw": "{{path}}/funcionarios/1",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"funcionarios",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Funcionario por Nome",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnZXN0YW8tdHJhbnNwb3J0ZXMiLCJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJleHAiOjE3NDcxODYwNDR9.mmuq18AfquOCbqpn18y_4buXR3bJFeo5gXIw_QMw0LI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 3,\r\n    \"nome\": \"Teste da Silva\",\r\n    \"email\": \"teste@email.com\",\r\n    \"senha\": 123456,\r\n    \"role\": \"ADMIN\"\r\n}"
+						},
+						"url": {
+							"raw": "{{path}}/funcionarios/nome/Tarcísio Pereira da Silva",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"funcionarios",
+								"nome",
+								"Tarcísio Pereira da Silva"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Funcionarios por Transporte Alternativo",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnZXN0YW8tdHJhbnNwb3J0ZXMiLCJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJleHAiOjE3NDcxODYwNDR9.mmuq18AfquOCbqpn18y_4buXR3bJFeo5gXIw_QMw0LI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 3,\r\n    \"nome\": \"Teste da Silva\",\r\n    \"email\": \"teste@email.com\",\r\n    \"senha\": 123456,\r\n    \"role\": \"ADMIN\"\r\n}"
+						},
+						"url": {
+							"raw": "{{path}}/funcionarios/transporte-alternativo/true",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"funcionarios",
+								"transporte-alternativo",
+								"true"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Funcionarios por Veiculo Corporativo",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnZXN0YW8tdHJhbnNwb3J0ZXMiLCJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJleHAiOjE3NDcxODYwNDR9.mmuq18AfquOCbqpn18y_4buXR3bJFeo5gXIw_QMw0LI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 3,\r\n    \"nome\": \"Teste da Silva\",\r\n    \"email\": \"teste@email.com\",\r\n    \"senha\": 123456,\r\n    \"role\": \"ADMIN\"\r\n}"
+						},
+						"url": {
+							"raw": "{{path}}/funcionarios/veiculo-corporativo/false",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"funcionarios",
+								"veiculo-corporativo",
+								"false"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Uso Transporte",
+			"item": [
+				{
+					"name": "Listar Todos Usos de Transportes",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnZXN0YW8tdHJhbnNwb3J0ZXMiLCJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJleHAiOjE3NDcxOTA3Njh9.wbo9QQoA4yFS_RyLIhJwDW5nxbcHFVzj14m8oqmzlrs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{path}}/uso-transporte",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"uso-transporte"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar Uso de Transporte",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnZXN0YW8tdHJhbnNwb3J0ZXMiLCJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJleHAiOjE3NDcxODYwNDR9.mmuq18AfquOCbqpn18y_4buXR3bJFeo5gXIw_QMw0LI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"transporte\": 1,\r\n    \"funcionario\": 1,\r\n    \"dataUso\": \"2025-05-13\",\r\n    \"kmRodados\": 30.5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{path}}/uso-transporte",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"uso-transporte"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Uso Transporte",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnZXN0YW8tdHJhbnNwb3J0ZXMiLCJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJleHAiOjE3NDcxOTA3Njh9.wbo9QQoA4yFS_RyLIhJwDW5nxbcHFVzj14m8oqmzlrs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"transporte\": 2,\r\n    \"funcionario\": 1,\r\n    \"dataUso\": \"2025-05-13\",\r\n    \"kmRodados\": 30.5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{path}}/uso-transporte",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"uso-transporte"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Uso Transporte",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnZXN0YW8tdHJhbnNwb3J0ZXMiLCJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJleHAiOjE3NDcxOTA3Njh9.wbo9QQoA4yFS_RyLIhJwDW5nxbcHFVzj14m8oqmzlrs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{path}}/uso-transporte/2",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"uso-transporte",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Uso de Transporte por Funcionario",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnZXN0YW8tdHJhbnNwb3J0ZXMiLCJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJleHAiOjE3NDcxODk4Njl9.HPzwRqyzz0zvRjKm02gh2xm2Guz58NVJFq9Nl1BDRmA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"transporte\": 1,\r\n    \"funcionario\": 1,\r\n    \"dataUso\": \"2025-05-13\",\r\n    \"kmRodados\": 30.5\r\n}"
+						},
+						"url": {
+							"raw": "{{path}}/uso-transporte/funcionario/1",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"uso-transporte",
+								"funcionario",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Uso de Transporte por Transporte",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnZXN0YW8tdHJhbnNwb3J0ZXMiLCJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJleHAiOjE3NDcxODk4Njl9.HPzwRqyzz0zvRjKm02gh2xm2Guz58NVJFq9Nl1BDRmA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{path}}/uso-transporte/transporte/2",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"uso-transporte",
+								"transporte",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Uso de Transportes por Data",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnZXN0YW8tdHJhbnNwb3J0ZXMiLCJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJleHAiOjE3NDcxOTExMjB9.PyvXV-FTC_6XlJ4DpuVWF6u9BJHP1fIuUF8LVuTeQLE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{path}}/uso-transporte/data-uso/2025-05-12/2025-05-14",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"uso-transporte",
+								"data-uso",
+								"2025-05-12",
+								"2025-05-14"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Meta Ambiental",
+			"item": [
+				{
+					"name": "Listar Todas Metas",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnZXN0YW8tdHJhbnNwb3J0ZXMiLCJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJleHAiOjE3NDcxOTExMjB9.PyvXV-FTC_6XlJ4DpuVWF6u9BJHP1fIuUF8LVuTeQLE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{path}}/meta-ambiental",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"meta-ambiental"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar Meta",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnZXN0YW8tdHJhbnNwb3J0ZXMiLCJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJleHAiOjE3NDcxOTExMjB9.PyvXV-FTC_6XlJ4DpuVWF6u9BJHP1fIuUF8LVuTeQLE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"transporte\": 2,\r\n    \"descricao\": \"O Carro x deve transladar apenas y km por mês\",\r\n    \"maxKmPorMes\": 500\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{path}}/meta-ambiental",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"meta-ambiental"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Meta",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnZXN0YW8tdHJhbnNwb3J0ZXMiLCJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJleHAiOjE3NDcxOTExMjB9.PyvXV-FTC_6XlJ4DpuVWF6u9BJHP1fIuUF8LVuTeQLE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"transporte\": 2,\r\n    \"descricao\": \"O Carro x deve transladar apenas 500 km por mês\",\r\n    \"maxKmPorMes\": 500.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{path}}/meta-ambiental",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"meta-ambiental"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Detetar Meta",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnZXN0YW8tdHJhbnNwb3J0ZXMiLCJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJleHAiOjE3NDcxOTExMjB9.PyvXV-FTC_6XlJ4DpuVWF6u9BJHP1fIuUF8LVuTeQLE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{path}}/meta-ambiental/2",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"meta-ambiental",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Meta por ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnZXN0YW8tdHJhbnNwb3J0ZXMiLCJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJleHAiOjE3NDcxOTExMjB9.PyvXV-FTC_6XlJ4DpuVWF6u9BJHP1fIuUF8LVuTeQLE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{path}}/meta-ambiental/1",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"meta-ambiental",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Meta por Transporte",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnZXN0YW8tdHJhbnNwb3J0ZXMiLCJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJleHAiOjE3NDcxOTExMjB9.PyvXV-FTC_6XlJ4DpuVWF6u9BJHP1fIuUF8LVuTeQLE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{path}}/meta-ambiental/transporte/2",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"meta-ambiental",
+								"transporte",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Meta por KM",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnZXN0YW8tdHJhbnNwb3J0ZXMiLCJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJleHAiOjE3NDcxOTExMjB9.PyvXV-FTC_6XlJ4DpuVWF6u9BJHP1fIuUF8LVuTeQLE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{path}}/meta-ambiental/km-max/450/550",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"meta-ambiental",
+								"km-max",
+								"450",
+								"550"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Recompensa",
+			"item": [
+				{
+					"name": "Listar Todas Recompensas",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnZXN0YW8tdHJhbnNwb3J0ZXMiLCJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJleHAiOjE3NDcxOTExMjB9.PyvXV-FTC_6XlJ4DpuVWF6u9BJHP1fIuUF8LVuTeQLE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{path}}/recompensas",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"recompensas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar Recompensa",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnZXN0YW8tdHJhbnNwb3J0ZXMiLCJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJleHAiOjE3NDcxOTExMjB9.PyvXV-FTC_6XlJ4DpuVWF6u9BJHP1fIuUF8LVuTeQLE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"funcionario\": 1,\r\n    \"descricao\": \"Recompensa por cumprir a meta ambiental do mês\",\r\n    \"valor\": 500\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{path}}/recompensas",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"recompensas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Recompensa",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnZXN0YW8tdHJhbnNwb3J0ZXMiLCJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJleHAiOjE3NDcxOTExMjB9.PyvXV-FTC_6XlJ4DpuVWF6u9BJHP1fIuUF8LVuTeQLE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"funcionario\": 1,\r\n    \"descricao\": \"Recompensa por cumprir a meta ambiental do mês\",\r\n    \"valor\": 300.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{path}}/recompensas",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"recompensas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Recompensa",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnZXN0YW8tdHJhbnNwb3J0ZXMiLCJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJleHAiOjE3NDcxOTExMjB9.PyvXV-FTC_6XlJ4DpuVWF6u9BJHP1fIuUF8LVuTeQLE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{path}}/recompensas/2",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"recompensas",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Recompensa por ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnZXN0YW8tdHJhbnNwb3J0ZXMiLCJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJleHAiOjE3NDcxOTExMjB9.PyvXV-FTC_6XlJ4DpuVWF6u9BJHP1fIuUF8LVuTeQLE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{path}}/recompensas/1",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"recompensas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Recompensa por Funcionario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnZXN0YW8tdHJhbnNwb3J0ZXMiLCJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJleHAiOjE3NDcxOTExMjB9.PyvXV-FTC_6XlJ4DpuVWF6u9BJHP1fIuUF8LVuTeQLE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{path}}/recompensas/funcionario/1",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"recompensas",
+								"funcionario",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "path",
+			"value": "localhost:8080/gestao-transportes",
+			"type": "string"
+		},
+		{
+			"key": "authpath",
+			"value": "localhost:8080/auth",
+			"type": "string"
+		}
+	]
+}

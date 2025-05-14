@@ -1,4 +1,6 @@
-FROM openjdk:17-jdk-slim
-WORKDIR /app
-COPY target/gestao-transporte-1.0.0.jar app.jar
-ENTRYPOINT ["java", "-jar", "app.jar"]
+FROM eclipse-temurin:21-alpine
+VOLUME /tmp
+EXPOSE 8080
+ARG JAR_FILE=target/demo-0.0.1-SNAPSHOT.jar
+ADD ${JAR_FILE} app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]

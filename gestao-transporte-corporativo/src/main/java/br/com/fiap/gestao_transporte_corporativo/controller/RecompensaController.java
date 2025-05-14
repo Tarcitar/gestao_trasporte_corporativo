@@ -1,54 +1,57 @@
 package br.com.fiap.gestao_transporte_corporativo.controller;
 
-import br.com.fiap.gestao_transporte_corporativo.model.Recompensa;
+import br.com.fiap.gestao_transporte_corporativo.dto.RecompensaCadastroDto;
+import br.com.fiap.gestao_transporte_corporativo.dto.RecompensaExibicaoDto;
 import br.com.fiap.gestao_transporte_corporativo.service.RecompensaService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
-@RequestMapping("/recompensas")
+@RequestMapping("/gestao-transportes")
 public class RecompensaController {
 
     @Autowired
-    private RecompensaService recompensaService;
+    private RecompensaService service;
 
-//    // Listar todas as recompensas
-//    @GetMapping
-//    public List<Recompensa> listarTodas() {
-//        return recompensaService.listarTodas();
-//    }
-//
-//    // Obter uma recompensa por ID
-//    @GetMapping("/{id}")
-//    public ResponseEntity<Recompensa> obterPorId(@PathVariable Long id) {
-//        return recompensaService.obterPorId(id)
-//                .map(ResponseEntity::ok)
-//                .orElse(ResponseEntity.notFound().build());
-//    }
-//
-//    // Criar uma nova recompensa
-//    @PostMapping
-//    public Recompensa criar(@RequestBody Recompensa recompensa) {
-//        return recompensaService.criar(recompensa);
-//    }
-//
-//    // Atualizar uma recompensa existente
-//    @PutMapping("/{id}")
-//    public ResponseEntity<Recompensa> atualizar(@PathVariable Long id, @RequestBody Recompensa recompensaAtualizada) {
-//        return recompensaService.atualizar(id, recompensaAtualizada)
-//                .map(ResponseEntity::ok)
-//                .orElse(ResponseEntity.notFound().build());
-//    }
-//
-//    // Excluir uma recompensa por ID
-//    @DeleteMapping("/{id}")
-//    public ResponseEntity<Void> excluir(@PathVariable Long id) {
-//        if (recompensaService.excluir(id)) {
-//            return ResponseEntity.noContent().build();
-//        }
-//        return ResponseEntity.notFound().build();
-//    }
+    @GetMapping("/recompensas")
+    @ResponseStatus(HttpStatus.OK)
+    public Page<RecompensaExibicaoDto> listarTransportes(@PageableDefault(size=10, page=0, sort="id", direction= Sort.Direction.DESC) Pageable paginacao) {
+        return service.listarTodos(paginacao);
+    }
+
+    @GetMapping("/recompensas/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public RecompensaExibicaoDto buscarPorId(@PathVariable Long id) {
+        return service.obterPorId(id);
+    }
+
+    @GetMapping("/recompensas/funcionario/{idFuncionario}")
+    @ResponseStatus(HttpStatus.OK)
+    public Page<RecompensaExibicaoDto> listarPorIdFuncionario(@PathVariable Long idFuncionario, @PageableDefault(size=10, page=0, sort="id", direction= Sort.Direction.DESC) Pageable paginacao) {
+        return service.listarPorIdFuncionario(idFuncionario, paginacao);
+    }
+
+    @PostMapping("/recompensas")
+    @ResponseStatus(HttpStatus.CREATED)
+    public RecompensaExibicaoDto cadastrarRecompensa(@RequestBody @Valid RecompensaCadastroDto recompensaCadastroDto) {
+        return service.criar(recompensaCadastroDto);
+    }
+
+    @PutMapping("/recompensas")
+    @ResponseStatus(HttpStatus.OK)
+    public RecompensaExibicaoDto atualizarRecompensa(@RequestBody @Valid RecompensaCadastroDto recompensa) {
+        return service.atualizar(recompensa);
+    }
+
+    @DeleteMapping("/recompensas/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deletarRecompensa(@PathVariable Long id) {
+        service.excluir(id);
+    }
 }
